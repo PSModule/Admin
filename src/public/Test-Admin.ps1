@@ -3,35 +3,23 @@
         .SYNOPSIS
         Test if the current context is running as a specified role.
 
-        .DESCRIPTION
-        Test if the current context is running as a specified role.
-
         .EXAMPLE
-        Test-Role -Role Administrator
+        Test-Role
 
         Test if the current context is running as an Administrator.
-
-        .EXAMPLE
-        Test-Role -Role User
-
-        Test if the current context is running as a User.
-
-        .NOTES
-        Supported OS: Windows
     #>
-    [OutputType([Boolean])]
+    [OutputType([System.Boolean])]
     [CmdletBinding()]
-    [alias('Test-Role', 'Test-Administrator', 'IsAdmin', 'IsAdministrator')]
-    param(
-        # Role to test
-        [Parameter()]
-        [Security.Principal.WindowsBuiltInRole] $Role = 'Administrator'
-    )
+    [Alias('Test-Administrator', 'IsAdmin', 'IsAdministrator')]
+    param()
 
-    Write-Verbose "Test Role - [$Role]"
-    $user = [Security.Principal.WindowsIdentity]::GetCurrent()
-    $principal = New-Object Security.Principal.WindowsPrincipal($user)
-    $isAdmin = $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::$Role)
-    Write-Verbose "Test Role - [$Role] - [$isAdmin]"
-    $isAdmin
+    $IsUnix = $PSVersionTable.Platform -eq 'Unix'
+    if ($IsUnix) {
+        whoami -eq 'root'
+    } else {
+        $user = [Security.Principal.WindowsIdentity]::GetCurrent()
+        $principal = New-Object Security.Principal.WindowsPrincipal($user)
+        $isAdmin = $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+        $isAdmin
+    }
 }

@@ -18,19 +18,13 @@ Describe 'Admin' {
         }
     }
 
-    Context 'Functions' {
-        It 'Test-Admin' {
+    Context 'Function: Test-Admin' {
+        It 'should not throw' {
             { Test-Admin } | Should -Not -Throw
         }
 
-        It 'EUID is not null' {
-            Write-Verbose "EUID: $EUID" -Verbose
-            $EUID | Should -Not -BeNullOrEmpty
-        }
-
-        It "whoami == 'root'" {
-            Write-Verbose "whoami: $(whoami)" -Verbose
-            whoami | Should -Be 'root'
+        It 'should return true' {
+            { Test-Admin } | Should -Be $true
         }
     }
 }
