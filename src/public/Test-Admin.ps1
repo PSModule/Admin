@@ -15,7 +15,7 @@
 
     $IsUnix = $PSVersionTable.Platform -eq 'Unix'
     if ($IsUnix) {
-        whoami -eq 'root'
+        $(whoami) -eq 'root'
     } else {
         $user = [Security.Principal.WindowsIdentity]::GetCurrent()
         $principal = New-Object Security.Principal.WindowsPrincipal($user)
