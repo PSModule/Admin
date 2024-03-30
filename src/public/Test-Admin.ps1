@@ -22,9 +22,11 @@
         Write-Verbose "IsRoot: $IsRoot"
         $IsRoot
     } else {
+        Write-Verbose "Running on Windows, checking if user is an Administrator."
         $user = [Security.Principal.WindowsIdentity]::GetCurrent()
         $principal = New-Object Security.Principal.WindowsPrincipal($user)
         $isAdmin = $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+        Write-Verbose "IsAdmin: $isAdmin"
         $isAdmin
     }
 }
