@@ -24,7 +24,7 @@ Describe 'Admin' {
         }
 
         It 'should return true' {
-            { Test-Admin } | Should -Be $true
+            Test-Admin | Should -Be $true
         }
     }
 }
