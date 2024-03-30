@@ -24,7 +24,13 @@ Describe 'Admin' {
         }
 
         It 'should return true' {
-            Test-Admin | Should -Be $true
+            $IsUnix = $PSVersionTable.Platform -eq 'Unix'
+            if ($IsUnix) {
+                $IsAdmin = $(sudo pwsh -command "Test-Admin")
+            } else {
+                $IsAdmin = Test-Admin
+            }
+            $IsAdmin | Should -Be $true
         }
     }
 }
