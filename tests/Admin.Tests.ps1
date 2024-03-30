@@ -30,6 +30,7 @@ Describe 'Admin' {
 
         It "whoami == 'root'" {
             Write-Verbose "whoami: $(whoami)" -Verbose
-            whoami | Should -Be "root"
+            whoami | Should -Be 'root'
+        }
     }
 }
