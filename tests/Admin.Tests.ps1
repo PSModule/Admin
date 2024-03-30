@@ -17,4 +17,19 @@ Describe 'Admin' {
             { Import-Module -Name 'Admin' -Verbose -RequiredVersion 999.0.0 -Force } | Should -Not -Throw
         }
     }
+
+    Context 'Functions' {
+        It 'Test-Admin' {
+            { Test-Admin } | Should -Not -Throw
+        }
+
+        It 'EUID is not null' {
+            Write-Verbose "EUID: $EUID" -Verbose
+            $EUID | Should -Not -BeNullOrEmpty
+        }
+
+        It "whoami == 'root'" {
+            Write-Verbose "whoami: $(whoami)" -Verbose
+            whoami | Should -Be "root"
+    }
 }
