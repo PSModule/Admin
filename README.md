@@ -1,51 +1,30 @@
-# PSModuleTemplate
+# Admin
 
-Add a short description about the module and the project.
+A PowerShell module that provides a set of functions to help with checking if the current context is running in elevated mode.
 
 ## Prerequisites
 
-List any prerequisites needed to use the module, such as PowerShell versions, additional modules, or permissions.
+This module requires PowerShell 5.1 or later.
 
 ## Installation
 
-Provide step-by-step instructions on how to install the module, including any InstallModule commands or manual installation steps.
+To install the module run the following:
 
 ```powershell
-Install-Module -Name YourModuleName
+Install-Module -Name Admin
+Import-Module -Name Admin
 ```
 
 ## Usage
 
-Here is a list of example that are typical use cases for the module.
-This section should provide a good overview of the module's capabilities.
-
-### Example 1
-
-Provide examples for typical commands that a user would like to do with the module.
+### Example 1: Test if the current context is running in elevated mode
 
 ```powershell
-Import-Module -Name PSModuleTemplate
+Test-Admin
+true
 ```
 
-### Example 2
-
-Provide examples for typical commands that a user would like to do with the module.
-
-```powershell
-Import-Module -Name PSModuleTemplate
-```
-
-### Find more examples
-
-To find more examples of how to use the module, please refer to the [examples](examples) folder.
-
-Alternatively, you can use the Get-Command -Module 'This module' to find more commands that are available in the module.
-To find examples of each of the commands you can use Get-Help -Examples 'CommandName'.
-
-## Documentation
-
-Link to further documentation if available, or describe where in the repository users can find more detailed documentation about
-the module's functions and features.
+Check if the current context is running in elevated mode.
 
 ## Contributing
 
