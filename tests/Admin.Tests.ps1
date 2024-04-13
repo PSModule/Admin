@@ -27,7 +27,7 @@ Describe 'Admin' {
                 }
             }
         ) {
-            Test-Admin | Should -Be $false
+            Test-Admin | Should -Be $expected
         }
     }
 }
