@@ -1,0 +1,10 @@
+name: Nightly run
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  Process-PSModule:
+    uses: PSModule/Process-PSModule/.github/workflows/workflow.yml@v1
+    secrets: inherit
