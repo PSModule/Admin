@@ -1,12 +1,12 @@
 site_name: -{{ REPO_NAME }}-
 theme:
   name: material
-  language: en
-  font:
-    text: Roboto
-    code: Sono
-  logo: assets/icon.png
-  favicon: assets/icon.png
+#   language: en
+#   font:
+#     text: Roboto
+#     code: Sono
+#   logo: assets/icon.png
+#   favicon: assets/icon.png
 #   palette:
 #     # Palette toggle for automatic mode
 #     - media: "(prefers-color-scheme)"
