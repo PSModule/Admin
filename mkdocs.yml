@@ -34,10 +34,10 @@ theme:
   features:
     - navigation.instant
     - navigation.instant.progress
-    - navigation.tabs
     - navigation.indexes
     - navigation.top
     - navigation.tracking
+    - navigation.expand
     - search.suggest
     - search.highlight
 
