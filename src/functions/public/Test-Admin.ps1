@@ -7,6 +7,9 @@
         Test-Role
 
         Test if the current context is running as an Administrator.
+
+        .LINK
+        https://psmodule.io/Admin/Functions/Test-Admin/
     #>
     [OutputType([System.Boolean])]
     [CmdletBinding()]
