@@ -1,13 +1,4 @@
-﻿[CmdletBinding()]
-Param(
-    # Path to the module to test.
-    [Parameter()]
-    [string] $Path
-)
-
-Write-Verbose "Path to the module: [$Path]" -Verbose
-
-Describe 'Admin' {
+﻿Describe 'Admin' {
     Context 'Function: Test-Admin' {
         It 'Should not throw' {
             { Test-Admin } | Should -Not -Throw
