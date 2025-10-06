@@ -9,7 +9,7 @@
 
         .EXAMPLE
         ```pwsh
-        Test-Role
+        Test-Admin
         ```
 
         Test if the current context is running as an Administrator.
