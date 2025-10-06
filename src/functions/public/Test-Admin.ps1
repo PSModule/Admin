@@ -3,8 +3,14 @@
         .SYNOPSIS
         Test if the current context is running as a specified role.
 
+        .DESCRIPTION
+        This function checks if the current user context has Administrator privileges on Windows or is root on Unix-based systems.
+        It returns $true if the user has the required privileges, otherwise $false.
+
         .EXAMPLE
+        ```pwsh
         Test-Role
+        ```
 
         Test if the current context is running as an Administrator.
 
