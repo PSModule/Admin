@@ -1,46 +1,27 @@
 # Admin
 
-A PowerShell module that provides a set of functions to help with checking if the current context is running in elevated mode.
-
-## Prerequisites
-
-This module requires PowerShell 5.1 or later.
+Admin is a PowerShell module for working with administrator role checks.
 
 ## Installation
 
-To install the module run the following:
+Install the module from the PowerShell Gallery:
 
 ```powershell
-Install-Module -Name Admin
+Install-PSResource -Name Admin
 Import-Module -Name Admin
 ```
 
-## Usage
+## Documentation
 
-### Example 1: Test if the current context is running in elevated mode
+Documentation is published at [psmodule.io/Admin](https://psmodule.io/Admin/).
+
+Use PowerShell help and command discovery for module details:
 
 ```powershell
-Test-Admin
-true
+Get-Command -Module Admin
+Get-Help <CommandName> -Examples
 ```
-
-Check if the current context is running in elevated mode.
 
 ## Contributing
 
-Coder or not, you can contribute to the project! We welcome all contributions.
-
-### For Users
-
-If you don't code, you still sit on valuable information that can make this project even better. If you experience that the
-product does unexpected things, throw errors or is missing functionality, you can help by submitting bugs and feature requests.
-Please see the issues tab on this project and submit a new issue that matches your needs.
-
-### For Developers
-
-If you do code, we'd love to have your contributions. Please read the [Contribution guidelines](CONTRIBUTING.md) for more information.
-You can either help by picking up an existing issue or submit a new one if you have an idea for a new feature or improvement.
-
-## Acknowledgements
-
-Here is a list of people and projects that helped this project in some way.
+Issues and pull requests are welcome. Please use the repository issue tracker to report bugs, request features, or discuss improvements.
