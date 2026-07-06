@@ -7,7 +7,7 @@ Admin is a PowerShell module for working with administrator role checks.
 Install the module from the PowerShell Gallery:
 
 ```powershell
-Install-PSResource -Name Admin
+Install-Module -Name Admin
 Import-Module -Name Admin
 ```
 
@@ -19,7 +19,7 @@ Use PowerShell help and command discovery for module details:
 
 ```powershell
 Get-Command -Module Admin
-Get-Help <CommandName> -Examples
+Get-Help Test-Admin -Examples
 ```
 
 ## Contributing
