@@ -1,46 +1,40 @@
 # Admin
 
-A PowerShell module that provides a set of functions to help with checking if the current context is running in elevated mode.
-
-## Prerequisites
-
-This module requires PowerShell 5.1 or later.
+Admin is a PowerShell module for checking whether the current session is running in an elevated context — as an administrator on Windows, or as root on Linux and macOS.
 
 ## Installation
 
-To install the module run the following:
+Install the module from the PowerShell Gallery:
 
 ```powershell
-Install-Module -Name Admin
+Install-PSResource -Name Admin
 Import-Module -Name Admin
 ```
 
 ## Usage
 
-### Example 1: Test if the current context is running in elevated mode
+### Example: Test if the current context is elevated
 
 ```powershell
 Test-Admin
-true
+# True
 ```
 
-Check if the current context is running in elevated mode.
+`Test-Admin` returns `$true` when the current session is running with administrator (Windows) or root (Linux/macOS) privileges, otherwise `$false`. Use it to gate operations that require elevation:
 
-## Contributing
+```powershell
+if (-not (Test-Admin)) {
+    throw 'This operation requires an elevated session.'
+}
+```
 
-Coder or not, you can contribute to the project! We welcome all contributions.
+## Documentation
 
-### For Users
+Documentation is published at [psmodule.io/Admin](https://psmodule.io/Admin/).
 
-If you don't code, you still sit on valuable information that can make this project even better. If you experience that the
-product does unexpected things, throw errors or is missing functionality, you can help by submitting bugs and feature requests.
-Please see the issues tab on this project and submit a new issue that matches your needs.
+Use PowerShell help and command discovery for module details:
 
-### For Developers
-
-If you do code, we'd love to have your contributions. Please read the [Contribution guidelines](CONTRIBUTING.md) for more information.
-You can either help by picking up an existing issue or submit a new one if you have an idea for a new feature or improvement.
-
-## Acknowledgements
-
-Here is a list of people and projects that helped this project in some way.
+```powershell
+Get-Command -Module Admin
+Get-Help Test-Admin -Examples
+```
