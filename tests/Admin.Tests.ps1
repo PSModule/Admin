@@ -1,4 +1,6 @@
-﻿Describe 'Admin' {
+﻿#Requires -Modules @{ ModuleName = 'Pester'; ModuleVersion = '6.0.0'; MaximumVersion = '6.*' }
+
+Describe 'Admin' {
     Context 'Function: Test-Admin' {
         It 'Should not throw' {
             { Test-Admin } | Should -Not -Throw
