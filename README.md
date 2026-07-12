@@ -1,14 +1,31 @@
 # Admin
 
-Admin is a PowerShell module for working with administrator role checks.
+Admin is a PowerShell module for checking whether the current session is running in an elevated (administrator) context.
 
 ## Installation
 
 Install the module from the PowerShell Gallery:
 
 ```powershell
-Install-Module -Name Admin
+Install-PSResource -Name Admin
 Import-Module -Name Admin
+```
+
+## Usage
+
+### Example: Test if the current context is elevated
+
+```powershell
+Test-Admin
+# True
+```
+
+`Test-Admin` returns `$true` when the current session is running with administrator (Windows) or root (Linux/macOS) privileges, otherwise `$false`. Use it to gate operations that require elevation:
+
+```powershell
+if (-not (Test-Admin)) {
+    throw 'This operation requires an elevated session.'
+}
 ```
 
 ## Documentation
@@ -21,7 +38,3 @@ Use PowerShell help and command discovery for module details:
 Get-Command -Module Admin
 Get-Help Test-Admin -Examples
 ```
-
-## Contributing
-
-Issues and pull requests are welcome. Please use the repository issue tracker to report bugs, request features, or discuss improvements.
