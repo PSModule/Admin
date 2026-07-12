@@ -1,6 +1,6 @@
 # Admin
 
-Admin is a PowerShell module for checking whether the current session is running in an elevated (administrator) context.
+Admin is a PowerShell module for checking whether the current session is running in an elevated context — as an administrator on Windows, or as root on Linux and macOS.
 
 ## Installation
 
